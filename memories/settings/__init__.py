@@ -1,5 +1,5 @@
-from .heroku_settings import *
+from .heroku import *
 try:
-    from .local_settings import *
+    from .local import *
 except ImportError:
     pass

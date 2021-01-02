@@ -2,7 +2,8 @@
 /venv/
 memories/.env
 /db.sqlite3
-/memories/migrations/
+*/migrations
 .idea
 /settings/local_settings.py
 /memories/settings/local.py
+/mem_notes/migrations/
