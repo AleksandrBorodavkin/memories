@@ -1,0 +1,7 @@
+# Project exclude paths
+/venv/
+.env
+/db.sqlite3
+/memories/migrations/
+.idea
+/settings/local_settings.py
