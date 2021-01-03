@@ -8,4 +8,4 @@ class Memories(models.Model):
     subject = models.CharField(max_length=50)
     description = models.TextField(max_length=1000)
     city = models.CharField(max_length=255)
-    location = PlainLocationField(based_fields=['city'], zoom=7)
+    location = PlainLocationField(based_fields=['city', 'location'], zoom=3)
