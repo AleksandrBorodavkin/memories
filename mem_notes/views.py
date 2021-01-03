@@ -28,3 +28,8 @@ def note_detail(request, pk):
         raise Http404('Такого нет тут!')
 
     return render(request, 'mem_notes/note_detail.html', context={'note': note})
+
+
+def note_list(request):
+    notes = Memories.objects.all()
+    return render(request, 'mem_notes/note_list.html', context={'notes': notes})
