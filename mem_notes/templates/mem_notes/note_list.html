@@ -1,11 +1,13 @@
 {% extends 'mem_notes/base.html' %}
 {% block content %}
-
     <div class="container">
         <div class="row">
             <div class="col-sm-2">
             </div>
             <div class="col-sm-8">
+                {% if not notes %}
+                    <p>У вас нет не одной записи. Создайте их!</p>
+                {% endif %}
                 {% for note in notes %}
                     <div class="card mb-2">
                         <div class="card-header">

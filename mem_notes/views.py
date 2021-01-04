@@ -1,3 +1,4 @@
+from allauth.socialaccount.models import SocialAccount
 from django.http import Http404
 from django.shortcuts import render, redirect
 
@@ -32,4 +33,13 @@ def note_detail(request, pk):
 
 def note_list(request):
     notes = Memories.objects.all()
-    return render(request, 'mem_notes/note_list.html', context={'notes': notes})
+    ex_data = ''
+    try:
+        ex_data = SocialAccount.objects.get(user=request.user.id).extra_data
+    except SocialAccount.DoesNotExist:
+        pass
+    return render(request, 'mem_notes/note_list.html', context={
+        'ex_data': ex_data,
+        'notes': notes
+    })
+
