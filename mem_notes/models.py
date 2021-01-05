@@ -4,6 +4,9 @@ from location_field.models.plain import PlainLocationField
 
 
 class Memories(models.Model):
+    """
+    Модель содержит поля для описывания воспоминаний
+    """
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
     subject = models.CharField(max_length=50)
     description = models.TextField(max_length=1000)
