@@ -1,1 +1,1 @@
-web: gunicorn memories_about_places.wsgi
+web: gunicorn memories.wsgi
