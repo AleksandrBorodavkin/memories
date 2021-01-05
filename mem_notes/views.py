@@ -43,3 +43,10 @@ def note_list(request):
         'notes': notes
     })
 
+
+def policy(request):
+
+    return render(request, 'mem_notes/policy.html', context={})
+
+
+

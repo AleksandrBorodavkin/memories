@@ -16,10 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from mem_notes.views import add_note, note_detail, note_list
+from mem_notes.views import add_note, note_detail, note_list, policy
 
 urlpatterns = [
     path('add_note/', add_note, name='add_note'),
+    path('policy/', policy, name='policy'),
     path('', note_list, name='note_list'),
     path('note_detail/<int:pk>/', note_detail, name='note_detail'),
 ]
