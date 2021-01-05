@@ -9,3 +9,10 @@ class Memories(models.Model):
     description = models.TextField(max_length=1000)
     city = models.CharField(max_length=255)
     location = PlainLocationField(based_fields=['city', 'location'], zoom=3)
+
+    class Meta:
+        verbose_name = 'Воспоминание'
+        verbose_name_plural = 'Воспоминания'
+
+    def __str__(self):
+        return self.subject

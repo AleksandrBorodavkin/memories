@@ -9,9 +9,13 @@ class RememberForm(forms.ModelForm):
         model = Memories
         fields = ['subject', 'description', 'city', 'location']
         widgets = {
-            'subject': forms.TextInput(attrs={'placeholder': 'Тема',}),
-            'description': forms.Textarea(attrs={'placeholder': 'Как можно подробнее..', }),
-            'city': forms.TextInput(attrs={'placeholder': 'Город, улицу и номер дома', }),
-            'location': forms.HiddenInput(attrs={'placeholder': 'Тут ничего не нужно'}),
+            'subject': forms.TextInput(attrs={'placeholder': 'Тема',
+                                              'class': 'm-1 form-control'}),
+            'description': forms.Textarea(attrs={'placeholder': 'Как можно подробнее..',
+                                                 'class': 'm-1 form-control' }),
+            'city': forms.TextInput(attrs={'placeholder': 'Город, улицу и номер дома',
+                                           'class': 'm-1 form-control'}),
+            'location': forms.HiddenInput(attrs={'placeholder': 'Тут ничего не нужно',
+                                                 'class': 'm-1 form-control'}),
         }
 
