@@ -13,7 +13,7 @@ def add_note(request):
             post = form.save(commit=False)
             post.owner = request.user
             post.save()
-            return redirect(note_detail, pk=post.pk)
+            return redirect(note_list)
     else:
         form = RememberForm()
     return render(request,
@@ -32,7 +32,7 @@ def note_detail(request, pk):
 
 
 def note_list(request):
-    notes = Memories.objects.all()
+    notes = Memories.objects.filter(owner=request.user.id)
     ex_data = ''
     try:
         ex_data = SocialAccount.objects.get(user=request.user.id).extra_data
